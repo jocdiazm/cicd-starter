@@ -50,7 +50,8 @@ func main() {
 		}
 		dbQueries := database.New(db)
 		apiCfg.DB = dbQueries
-		log.Println("Connected to database!")}
+		log.Println("Connected to database!")
+	}
 
 	router := chi.NewRouter()
 
@@ -71,7 +72,8 @@ func main() {
 		}
 		defer f.Close()
 		if _, err := io.Copy(w, f); err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)}
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+		}
 	})
 
 	v1Router := chi.NewRouter()
