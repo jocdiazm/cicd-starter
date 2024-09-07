@@ -29,13 +29,13 @@ var staticFiles embed.FS
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {
-		log.Fatalf("Error loading .env file: %v", err)
+		log.Printf("Error loading .env file: %v", err)
 	}
 
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
-		log.Fatal("PORT environment variable is not set")
+		log.Printf("PORT environment variable is not set")
 	}
 
 	log.Println("Notely listening on port: %v", port)
