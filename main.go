@@ -38,6 +38,8 @@ func main() {
 		log.Fatal("PORT environment variable is not set")
 	}
 
+	log.Println("Notely listening on port: %v", port)
+
 	apiCfg := apiConfig{}
 
 	dbURL := os.Getenv("DATABASE_URL")
